@@ -1,0 +1,43 @@
+package threadPrograms.maveric;
+
+import java.io.File;  // Import the File class
+import java.io.FileNotFoundException;  // Import this class to handle errors
+import java.util.Scanner; // Import the Scanner class to read text files
+
+public class ReadFiles {
+	
+  public static void main(String[] args) {
+	  
+    try {
+    	
+      File myObj = new File("C:\\Users\\Public\\text.txt");
+      Scanner myReader = new Scanner(myObj);
+      while (myReader.hasNextLine()) {
+        String data = myReader.nextLine();
+         if(myReader.nextLine() != null) {
+        	 System.out.println(data);
+         }
+       
+      }
+      myReader.close();
+    } 
+      catch (FileNotFoundException e) {
+      System.out.println("An error occurred.");
+      e.printStackTrace();
+    }
+  }
+}
+
+/*text.txt file like this 
+
+Preethi
+Uma
+Usha
+Shree
+
+
+-- output is ----
+
+Preethi
+Usha*/
+
